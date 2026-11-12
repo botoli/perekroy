@@ -289,6 +289,11 @@ function App() {
           ПЕРЕКРОЙ<span><AsteriskIcon /></span>
         </a>
         <p>ТВОИ ВЕЩИ — НОВАЯ ИСТОРИЯ</p>
+        <div className="footer-contacts">
+          <span>КОНТАКТЫ</span>
+          <a href="mailto:perekroy@gmail.com">perekroy@gmail.com</a>
+          <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+        </div>
         <a href="#top">НАВЕРХ <Icon name="arrow-up" /></a>
       </footer>
     </>
