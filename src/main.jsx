@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
+function AsteriskIcon() { return <svg className="asterisk-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 6v12" /><path d="M17.196 9 6.804 15" /><path d="m6.804 9 10.392 6" /></svg>; }
+function Icon({ name }) { const paths = { "arrow-up-right": <><path d="M7 7h10v10" /><path d="M7 17 17 7" /></>, "arrow-down-right": <><path d="M7 7l10 10" /><path d="M17 7v10H7" /></>, "arrow-up": <><path d="m5 12 7-7 7 7" /><path d="M12 19V5" /></>, plus: <><path d="M5 12h14" /><path d="M12 5v14" /></> }; return <svg className="lucide-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">{paths[name]}</svg>; }
 function App() {
   const [service, setService] = useState("Переделка вещи");
   const [file, setFile] = useState("");
@@ -9,7 +11,7 @@ function App() {
     <>
       <header className="header">
         <a className="logo" href="#top">
-          ПЕРЕКРОЙ<span>✳</span>
+          ПЕРЕКРОЙ<span><AsteriskIcon /></span>
         </a>
         <nav>
           <a href="#about">О проекте</a>
@@ -17,7 +19,7 @@ function App() {
           <a href="#process">Как это работает</a>
         </nav>
         <a className="header-cta" href="#form">
-          Обсудить идею ↗
+          Обсудить идею <Icon name="arrow-up-right" />
         </a>
       </header>
       <main id="top">
@@ -40,10 +42,10 @@ function App() {
               ты уже знаешь, в ту, которую захочется носить снова.
             </p>
             <a className="button" href="#form">
-              Преобразить свою вещь <span>↗</span>
+              Преобразить свою вещь <span><Icon name="arrow-up-right" /></span>
             </a>
             <div className="hero-note">
-              НЕ ВЫБРАСЫВАЙ. ПЕРЕКРАИВАЙ. <span>✳</span>
+              НЕ ВЫБРАСЫВАЙ. ПЕРЕКРАИВАЙ. <span><AsteriskIcon /></span>
             </div>
           </div>
           <div className="hero-visual">
@@ -60,19 +62,19 @@ function App() {
               <br />
               ЖИЗНЬ
               <br />
-              <b>✳</b>
+              <b><AsteriskIcon /></b>
             </div>
             <div className="visual-bottom">
               <span>ТВОИ ВЕЩИ — ТВОИ ПРАВИЛА</span>
-              <span>↘</span>
+              <span><Icon name="arrow-down-right" /></span>
             </div>
           </div>
         </section>
         <div className="ticker">
           <div>
-            СТАРОЕ В ДЕЛО <span>✳</span> НОВОЕ НА ТЕЛО <span>✳</span> СОЗДАНО
-            ДЛЯ ТЕБЯ <span>✳</span> СТАРОЕ В ДЕЛО <span>✳</span> НОВОЕ НА ТЕЛО{" "}
-            <span>✳</span>
+            СТАРОЕ В ДЕЛО <span><AsteriskIcon /></span> НОВОЕ НА ТЕЛО <span><AsteriskIcon /></span> СОЗДАНО
+            ДЛЯ ТЕБЯ <span><AsteriskIcon /></span> СТАРОЕ В ДЕЛО <span><AsteriskIcon /></span> НОВОЕ НА ТЕЛО{" "}
+            <span><AsteriskIcon /></span>
           </div>
         </div>
         <section className="intro section" id="about">
@@ -136,7 +138,7 @@ function App() {
                 <span>{x[0]}</span>
                 <h3>{x[1]}</h3>
                 <p>{x[2]}</p>
-                <b>↗</b>
+                <b><Icon name="arrow-up-right" /></b>
               </div>
             ))}
           </div>
@@ -158,7 +160,7 @@ function App() {
                 Деним, фактуры, нашивки и неожиданные детали. Здесь нет двух
                 одинаковых историй.
               </p>
-              <span className="caption">ПРИМЕРЫ ДЛЯ ВДОХНОВЕНИЯ ↗</span>
+              <span className="caption">ПРИМЕРЫ ДЛЯ ВДОХНОВЕНИЯ <Icon name="arrow-up-right" /></span>
             </div>
             <div className="inspiration-gallery">
               <figure><img src="/skirts.png" alt="Коллаж с идеями переделки джинсовых юбок" /><figcaption>01 / ДЕНИМ В НОВОЙ ФОРМЕ</figcaption></figure>
@@ -175,17 +177,17 @@ function App() {
           </h2>
           <div className="steps">
             <article>
-              <span>01 ↗</span>
+              <span>01 <Icon name="arrow-up-right" /></span>
               <h3>Расскажи об идее</h3>
               <p>Оставь заявку и покажи вещь, которую хочешь изменить.</p>
             </article>
             <article>
-              <span>02 ↗</span>
+              <span>02 <Icon name="arrow-up-right" /></span>
               <h3>Придумаем вместе</h3>
               <p>Обсудим пожелания, возможности и предварительный эскиз.</p>
             </article>
             <article>
-              <span>03 ✳</span>
+              <span>03 <AsteriskIcon /></span>
               <h3>Носи по-новому</h3>
               <p>
                 Твоя вещь получит новую форму и останется единственной в своём
@@ -207,7 +209,7 @@ function App() {
               придумаем вместе.
             </p>
             <div className="hand">
-              до встречи! <span>↗</span>
+              до встречи! <span><Icon name="arrow-up-right" /></span>
             </div>
           </div>
           <form
@@ -218,7 +220,7 @@ function App() {
           >
             <div className="form-heading">
               <h3>Начнём?</h3>
-              <span>✳</span>
+              <span><AsteriskIcon /></span>
             </div>
             <p>Демонстрация формы: отправка заявок пока не подключена.</p>
             <label>
@@ -254,7 +256,7 @@ function App() {
               />
             </label>
             <label className="upload">
-              ＋ {file || "Добавить фото вещи"}
+              <Icon name="plus" /> {file || "Добавить фото вещи"}
               <input
                 type="file"
                 accept="image/*"
@@ -262,7 +264,7 @@ function App() {
               />
             </label>
             <button className="button" type="submit">
-              Отправить заявку <span>↗</span>
+              Отправить заявку <span><Icon name="arrow-up-right" /></span>
             </button>
             {sent && (
               <p className="notice" role="status">
@@ -280,13 +282,15 @@ function App() {
       </main>
       <footer>
         <a className="logo" href="#top">
-          ПЕРЕКРОЙ<span>✳</span>
+          ПЕРЕКРОЙ<span><AsteriskIcon /></span>
         </a>
         <p>ТВОИ ВЕЩИ — НОВАЯ ИСТОРИЯ</p>
-        <a href="#top">НАВЕРХ ↑</a>
+        <a href="#top">НАВЕРХ <Icon name="arrow-up" /></a>
       </footer>
     </>
   );
 }
 createRoot(document.getElementById("root")).render(<App />);
+
+
 

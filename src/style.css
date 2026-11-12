@@ -507,3 +507,26 @@ footer > a:last-child {
 .hero-visual img { inset: 4% 0 2%; width: 100%; height: 94%; object-fit: contain; object-position: center bottom; }
 .hero-visual:after { display: none; }
 .visual-top, .visual-bottom { color: #171717; }
+/* Шрифты бренда: добавьте файлы в public/fonts, чтобы включить их на сайте. */
+@font-face {
+  font-family: "FindSans Pro";
+  src: local("FindSans Pro Regular"), local("FindSansPro-Regular"), url("/fonts/FindSansPro-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PF Stamps Pro";
+  src: local("PF Stamps Pro"), local("PFStampsPro"), url("/fonts/PFStampsPro.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+:root { font-family: "FindSans Pro", Manrope, Arial, sans-serif; }
+body, h1, h2, h3, p, input, textarea, select, button, .ticker, .service > span, .steps span, .stamp, .hand { font-family: "FindSans Pro", Manrope, Arial, sans-serif; }
+.logo { font-family: "PF Stamps Pro", Oswald, Impact, sans-serif; font-weight: 400; }
+/* Lucide Asterisk: SVG avoids platform-dependent emoji rendering. */
+.asterisk-icon { width: 1em; height: 1em; display: inline-block; vertical-align: -0.14em; flex: none; }
+.stamp b .asterisk-icon { vertical-align: middle; }
+.lucide-icon { width: 1em; height: 1em; display: inline-block; vertical-align: -0.14em; flex: none; }
+.upload .lucide-icon { margin-right: .3em; }
