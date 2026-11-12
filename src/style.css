@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Oswald:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600;700;800&display=swap");
 :root {
   font-family: Manrope, Arial, sans-serif;
   color: #171717;
@@ -508,13 +508,7 @@ footer > a:last-child {
 .hero-visual:after { display: none; }
 .visual-top, .visual-bottom { color: #171717; }
 /* Шрифты бренда: добавьте файлы в public/fonts, чтобы включить их на сайте. */
-@font-face {
-  font-family: "FindSans Pro";
-  src: local("FindSans Pro Regular"), local("FindSansPro-Regular"), url("/fonts/FindSansPro-Regular.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
+
 @font-face {
   font-family: "PF Stamps Pro";
   src: local("PF Stamps Pro"), local("PFStampsPro"), url("/fonts/PFStampsPro.woff2") format("woff2");
@@ -522,11 +516,17 @@ footer > a:last-child {
   font-weight: 400;
   font-display: swap;
 }
-:root { font-family: "FindSans Pro", Manrope, Arial, sans-serif; }
-body, h1, h2, h3, p, input, textarea, select, button, .ticker, .service > span, .steps span, .stamp, .hand { font-family: "FindSans Pro", Manrope, Arial, sans-serif; }
+:root { font-family: "Source Sans 3", Arial, sans-serif; }
+body, h1, h2, h3, p, input, textarea, select, button, .ticker, .service > span, .steps span, .stamp, .hand { font-family: "Source Sans 3", Arial, sans-serif; }
 .logo { font-family: "PF Stamps Pro", Oswald, Impact, sans-serif; font-weight: 400; }
 /* Lucide Asterisk: SVG avoids platform-dependent emoji rendering. */
 .asterisk-icon { width: 1em; height: 1em; display: inline-block; vertical-align: -0.14em; flex: none; }
 .stamp b .asterisk-icon { vertical-align: middle; }
 .lucide-icon { width: 1em; height: 1em; display: inline-block; vertical-align: -0.14em; flex: none; }
 .upload .lucide-icon { margin-right: .3em; }
+
+
+.ticker .ticker-track { display: flex; width: max-content; min-width: 200%; animation: ticker-scroll 28s linear infinite; }
+.ticker .ticker-group { display: flex; align-items: center; justify-content: space-around; flex: 0 0 50%; width: max-content; }
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker .ticker-track { animation: none; } }

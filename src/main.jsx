@@ -71,10 +71,14 @@ function App() {
           </div>
         </section>
         <div className="ticker">
-          <div>
-            СТАРОЕ В ДЕЛО <span><AsteriskIcon /></span> НОВОЕ НА ТЕЛО <span><AsteriskIcon /></span> СОЗДАНО
-            ДЛЯ ТЕБЯ <span><AsteriskIcon /></span> СТАРОЕ В ДЕЛО <span><AsteriskIcon /></span> НОВОЕ НА ТЕЛО{" "}
-            <span><AsteriskIcon /></span>
+          <div className="ticker-track">
+            {[0, 1].map((copy) => (
+              <div className="ticker-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>
+                СТАРОЕ В ДЕЛО <span><AsteriskIcon /></span> НОВОЕ НА ТЕЛО <span><AsteriskIcon /></span> СОЗДАНО
+                ДЛЯ ТЕБЯ <span><AsteriskIcon /></span> СТАРОЕ В ДЕЛО <span><AsteriskIcon /></span> НОВОЕ НА ТЕЛО
+                <span><AsteriskIcon /></span>
+              </div>
+            ))}
           </div>
         </div>
         <section className="intro section" id="about">
